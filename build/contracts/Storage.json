@@ -1,0 +1,697 @@
+{
+  "contractName": "Storage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "states",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "newState",
+          "type": "uint8"
+        }
+      ],
+      "name": "setState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061015d806100206000396000f30060806040526004361061004b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166302a22337811461005057806327737d58146100a2575b600080fd5b34801561005c57600080fd5b5061007e73ffffffffffffffffffffffffffffffffffffffff600435166100d8565b6040518082600181111561008e57fe5b60ff16815260200191505060405180910390f35b3480156100ae57600080fd5b506100d673ffffffffffffffffffffffffffffffffffffffff6004351660ff602435166100ed565b005b60006020819052908152604090205460ff1681565b73ffffffffffffffffffffffffffffffffffffffff82166000908152602081905260409020805482919060ff19166001838181111561012857fe5b021790555050505600a165627a7a72305820a60febe0bd8bf7ca8071771f179148a5668705084be923ee8a51f8645285a0830029",
+  "deployedBytecode": "0x60806040526004361061004b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166302a22337811461005057806327737d58146100a2575b600080fd5b34801561005c57600080fd5b5061007e73ffffffffffffffffffffffffffffffffffffffff600435166100d8565b6040518082600181111561008e57fe5b60ff16815260200191505060405180910390f35b3480156100ae57600080fd5b506100d673ffffffffffffffffffffffffffffffffffffffff6004351660ff602435166100ed565b005b60006020819052908152604090205460ff1681565b73ffffffffffffffffffffffffffffffffffffffff82166000908152602081905260409020805482919060ff19166001838181111561012857fe5b021790555050505600a165627a7a72305820a60febe0bd8bf7ca8071771f179148a5668705084be923ee8a51f8645285a0830029",
+  "sourceMap": "56:233:1:-;;;146:29;8:9:-1;5:2;;;30:1;27;20:12;5:2;146:29:1;56:233;;;;;;",
+  "deployedSourceMap": "56:233:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;94:43;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;94:43:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;183:103;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;183:103:1;;;;;;;;;;;;;94:43;;;;;;;;;;;;;;;;:::o;183:103::-;255:12;;;:6;:12;;;;;;;;;;:23;;270:8;;255:12;-1:-1:-1;;255:23:1;;270:8;255:23;;;;;;;;;;;;;183:103;;:::o",
+  "source": "pragma solidity ^0.4.24;\r\n\r\nimport './IStorage.sol';\r\n\r\ncontract Storage is IStorage {\r\n\r\n    mapping(address=>RecordState) public states;\r\n\r\n    constructor() public {\r\n    }\r\n\r\n    function setState(address user, RecordState newState) public {\r\n        states[user] = newState;\r\n    }\r\n}",
+  "sourcePath": "D:\\projects\\posts\\p2_solidity_enums\\contracts\\Storage.sol",
+  "ast": {
+    "absolutePath": "/D/projects/posts/p2_solidity_enums/contracts/Storage.sol",
+    "exportedSymbols": {
+      "Storage": [
+        40
+      ]
+    },
+    "id": 41,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/D/projects/posts/p2_solidity_enums/contracts/IStorage.sol",
+        "file": "./IStorage.sol",
+        "id": 15,
+        "nodeType": "ImportDirective",
+        "scope": 41,
+        "sourceUnit": 13,
+        "src": "28:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16,
+              "name": "IStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12,
+              "src": "76:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IStorage_$12",
+                "typeString": "contract IStorage"
+              }
+            },
+            "id": 17,
+            "nodeType": "InheritanceSpecifier",
+            "src": "76:8:1"
+          }
+        ],
+        "contractDependencies": [
+          12
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 40,
+        "linearizedBaseContracts": [
+          40,
+          12
+        ],
+        "name": "Storage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 21,
+            "name": "states",
+            "nodeType": "VariableDeclaration",
+            "scope": 40,
+            "src": "94:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_RecordState_$4_$",
+              "typeString": "mapping(address => enum IStorage.RecordState)"
+            },
+            "typeName": {
+              "id": 20,
+              "keyType": {
+                "id": 18,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "102:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "94:29:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_RecordState_$4_$",
+                "typeString": "mapping(address => enum IStorage.RecordState)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 19,
+                "name": "RecordState",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 4,
+                "src": "111:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_RecordState_$4",
+                  "typeString": "enum IStorage.RecordState"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 24,
+              "nodeType": "Block",
+              "src": "167:8:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 25,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "157:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "167:0:1"
+            },
+            "scope": 40,
+            "src": "146:29:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 38,
+              "nodeType": "Block",
+              "src": "244:42:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 32,
+                        "name": "states",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 21,
+                        "src": "255:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_RecordState_$4_$",
+                          "typeString": "mapping(address => enum IStorage.RecordState)"
+                        }
+                      },
+                      "id": 34,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 33,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27,
+                        "src": "262:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "255:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_RecordState_$4",
+                        "typeString": "enum IStorage.RecordState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 35,
+                      "name": "newState",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "270:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_RecordState_$4",
+                        "typeString": "enum IStorage.RecordState"
+                      }
+                    },
+                    "src": "255:23:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_RecordState_$4",
+                      "typeString": "enum IStorage.RecordState"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "255:23:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 39,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "201:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "201:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "name": "newState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "215:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_RecordState_$4",
+                    "typeString": "enum IStorage.RecordState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 28,
+                    "name": "RecordState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4,
+                    "src": "215:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_RecordState_$4",
+                      "typeString": "enum IStorage.RecordState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "200:36:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 31,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "244:0:1"
+            },
+            "scope": 40,
+            "src": "183:103:1",
+            "stateMutability": "nonpayable",
+            "superFunction": 11,
+            "visibility": "public"
+          }
+        ],
+        "scope": 41,
+        "src": "56:233:1"
+      }
+    ],
+    "src": "0:289:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/projects/posts/p2_solidity_enums/contracts/Storage.sol",
+    "exportedSymbols": {
+      "Storage": [
+        40
+      ]
+    },
+    "id": 41,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/D/projects/posts/p2_solidity_enums/contracts/IStorage.sol",
+        "file": "./IStorage.sol",
+        "id": 15,
+        "nodeType": "ImportDirective",
+        "scope": 41,
+        "sourceUnit": 13,
+        "src": "28:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16,
+              "name": "IStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12,
+              "src": "76:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IStorage_$12",
+                "typeString": "contract IStorage"
+              }
+            },
+            "id": 17,
+            "nodeType": "InheritanceSpecifier",
+            "src": "76:8:1"
+          }
+        ],
+        "contractDependencies": [
+          12
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 40,
+        "linearizedBaseContracts": [
+          40,
+          12
+        ],
+        "name": "Storage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 21,
+            "name": "states",
+            "nodeType": "VariableDeclaration",
+            "scope": 40,
+            "src": "94:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_RecordState_$4_$",
+              "typeString": "mapping(address => enum IStorage.RecordState)"
+            },
+            "typeName": {
+              "id": 20,
+              "keyType": {
+                "id": 18,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "102:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "94:29:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_RecordState_$4_$",
+                "typeString": "mapping(address => enum IStorage.RecordState)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 19,
+                "name": "RecordState",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 4,
+                "src": "111:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_RecordState_$4",
+                  "typeString": "enum IStorage.RecordState"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 24,
+              "nodeType": "Block",
+              "src": "167:8:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 25,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "157:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "167:0:1"
+            },
+            "scope": 40,
+            "src": "146:29:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 38,
+              "nodeType": "Block",
+              "src": "244:42:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 32,
+                        "name": "states",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 21,
+                        "src": "255:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_RecordState_$4_$",
+                          "typeString": "mapping(address => enum IStorage.RecordState)"
+                        }
+                      },
+                      "id": 34,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 33,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27,
+                        "src": "262:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "255:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_RecordState_$4",
+                        "typeString": "enum IStorage.RecordState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 35,
+                      "name": "newState",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "270:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_RecordState_$4",
+                        "typeString": "enum IStorage.RecordState"
+                      }
+                    },
+                    "src": "255:23:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_RecordState_$4",
+                      "typeString": "enum IStorage.RecordState"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "255:23:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 39,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "201:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "201:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "name": "newState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "215:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_RecordState_$4",
+                    "typeString": "enum IStorage.RecordState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 28,
+                    "name": "RecordState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4,
+                    "src": "215:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_RecordState_$4",
+                      "typeString": "enum IStorage.RecordState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "200:36:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 31,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "244:0:1"
+            },
+            "scope": 40,
+            "src": "183:103:1",
+            "stateMutability": "nonpayable",
+            "superFunction": 11,
+            "visibility": "public"
+          }
+        ],
+        "scope": 41,
+        "src": "56:233:1"
+      }
+    ],
+    "src": "0:289:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-08-18T11:27:34.231Z"
+}

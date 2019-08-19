@@ -1,6 +1,6 @@
 # README
 Source code for post about Solidity enums
-LINK
+https://medium.com/@kondrahanov/beware-the-solidity-enums-5f64b3435fa4
 
 This code demonstrates an example of error-prone Solidity enums usage.
 
